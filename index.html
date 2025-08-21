@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transportes Bieler — Turismo</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              light: "#cfe9ff",
+              sky: "#60a5fa",
+              blue: "#2563eb",
+              dark: "#1e3a8a",
+              ws: "#25D366"
+            }
+          },
+          boxShadow: {
+            soft: "0 10px 30px rgba(37, 99, 235, .12)"
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .btn { @apply inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold transition shadow-soft; }
+    .chip { @apply inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-100; }
+    .card { @apply bg-white rounded-2xl border border-blue-100 shadow; }
+    .section-title { @apply text-3xl md:text-4xl font-bold text-brand-dark; }
+    .lead { @apply text-lg text-slate-600; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800" style="background:linear-gradient(180deg,#eff6ff 0%, #ffffff 40%, #eff6ff 100%);">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-blue-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center">
+          <i data-lucide="bus-front" class="text-white w-5 h-5"></i>
+        </div>
+        <span class="font-extrabold text-lg tracking-tight text-brand-dark">Transportes Bieler</span>
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#servicios" class="text-brand-dark hover:text-brand-blue">Servicios</a>
+        <a href="#flota" class="text-brand-dark hover:text-brand-blue">Flota</a>
+        <a href="#destinos" class="text-brand-dark hover:text-brand-blue">Destinos</a>
+        <a href="#contacto" class="text-brand-dark hover:text-brand-blue">Contacto</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-2">
+        <a href="#contacto" class="btn bg-brand-blue text-white hover:bg-blue-700">Solicitar cotización</a>
+        <a href="https://wa.me/56900000000?text=Hola%20Transportes%20Bieler%2C%20quiero%20cotizar%20un%20viaje" target="_blank" rel="noopener" class="btn bg-white border border-green-200 text-green-700 hover:bg-green-50">
+          <i data-lucide="message-circle" class="w-5 h-5"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-sky-100 via-sky-50 to-blue-50"></div>
+    <div class="absolute -top-24 -right-24 w-[36rem] h-[36rem] rounded-full blur-3xl opacity-40" style="background:radial-gradient(closest-side,#8ad0ff,transparent)"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-28">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="chip"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Turismo seguro y confiable</span>
+          <h1 class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight text-brand-dark">
+            Viajes de turismo en
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-700">celestes y azules</span>
+          </h1>
+          <p class="mt-4 lead max-w-prose">
+            Traslados para grupos, empresas, colegios y eventos. Puntualidad, seguridad y comodidad en cada kilómetro.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#contacto" class="btn bg-brand-blue text-white hover:bg-blue-700">
+              Reservá tu viaje <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#flota" class="btn bg-white border border-blue-200 text-blue-800 hover:bg-blue-50">
+              Ver flota
+            </a>
+          </div>
+          <div class="mt-6 flex items-center gap-6 text-sm text-slate-600">
+            <span class="flex items-center gap-2"><i data-lucide="badge-check" class="w-4 h-4 text-blue-600"></i> Conductores profesionales</span>
+            <span class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-blue-600"></i> 24/7</span>
+            <span class="flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-blue-600"></i> Grupos de 10 a 50</span>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-3xl bg-gradient-to-br from-sky-200 to-blue-300 shadow-xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop" alt="Bus de turismo" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 flex items-end justify-end p-6">
+              <div class="w-full md:w-4/5 h-40 md:h-56 bg-white/90 rounded-2xl shadow-lg grid grid-cols-6 gap-1 p-4 border border-blue-100">
+                <div class="col-span-5 flex items-center gap-4">
+                  <i data-lucide="bus-front" class="w-10 h-10 text-blue-700"></i>
+                  <div>
+                    <p class="text-sm text-slate-500">Unidad Premium</p>
+                    <p class="font-semibold text-brand-dark">Comodidad y seguridad</p>
+                  </div>
+                </div>
+                <div class="col-span-1 flex items-center justify-end">
+                  <a href="#contacto" class="btn bg-brand-blue text-white hover:bg-blue-700">Cotizar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-title">Servicios de turismo</h2>
+      <p class="mt-3 lead max-w-2xl">Soluciones a medida para viajes regionales y nacionales.</p>
+
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="card overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=1200&auto=format&fit=crop" alt="City tour" class="h-36 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-brand-dark flex items-center gap-2"><i data-lucide="map-pinned" class="w-5 h-5"></i> City Tours</h3>
+            <p class="mt-2 text-slate-600">Recorridos urbanos y culturales con itinerarios flexibles y guías opcionales.</p>
+            <a href="#contacto" class="mt-4 inline-flex items-center gap-2 text-brand-blue hover:underline">Cotizar City Tour <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </article>
+
+        <article class="card overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe?q=80&w=1200&auto=format&fit=crop" alt="Eventos y congresos" class="h-36 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-brand-dark flex items-center gap-2"><i data-lucide="calendar-check" class="w-5 h-5"></i> Eventos & Congresos</h3>
+            <p class="mt-2 text-slate-600">Traslados coordinados puerta a puerta para asistentes y staff.</p>
+            <a href="#contacto" class="mt-4 inline-flex items-center gap-2 text-brand-blue hover:underline">Cotizar Eventos <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </article>
+
+        <article class="card overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1529078155058-5d716f45d604?q=80&w=1200&auto=format&fit=crop" alt="Colegios y empresas" class="h-36 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-brand-dark flex items-center gap-2"><i data-lucide="users" class="w-5 h-5"></i> Colegios & Empresas</h3>
+            <p class="mt-2 text-slate-600">Salidas educativas y viajes corporativos con protocolos de seguridad.</p>
+            <a href="#contacto" class="mt-4 inline-flex items-center gap-2 text-brand-blue hover:underline">Cotizar Salida <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </article>
+
+        <article class="card overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1200&auto=format&fit=crop" alt="Turismo a medida" class="h-36 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-brand-dark flex items-center gap-2"><i data-lucide="shield-check" class="w-5 h-5"></i> Turismo a Medida</h3>
+            <p class="mt-2 text-slate-600">Planificamos tu viaje según tus tiempos, intereses y presupuesto.</p>
+            <a href="#contacto" class="mt-4 inline-flex items-center gap-2 text-brand-blue hover:underline">Armar mi Viaje <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOTA -->
+  <section id="flota" class="py-20 bg-gradient-to-b from-white to-sky-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-title">Nuestra flota</h2>
+      <p class="mt-3 lead max-w-2xl">Vehículos modernos, mantenimiento al día y todos los seguros vigentes.</p>
+
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="card overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop" alt="Minibús ejecutivo" class="h-40 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-brand-dark flex items-center gap-2"><i data-lucide="bus-front" class="w-5 h-5"></i> Minibús Ejecutivo</h3>
+            <p class="mt-2 text-slate-600"><strong>Asientos:</strong> 19–24. A/C, butacas reclinables, USB y audio.</p>
+            <a href="#contacto" class="mt-4 inline-flex items-center gap-2 text-brand-blue hover:underline">Cotizar Minibús <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </article>
+
+        <article class="card overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1535086181675-4b1172df2ae3?q=80&w=1200&auto=format&fit=crop" alt="Bus turístico" class="h-40 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-brand-dark flex items-center gap-2"><i data-lucide="bus-front" class="w-5 h-5"></i> Bus Turístico</h3>
+            <p class="mt-2 text-slate-600"><strong>Asientos:</strong> 45–50. 2 ejes, baño, climatización y TV.</p>
+            <a href="#contacto" class="mt-4 inline-flex items-center gap-2 text-brand-blue hover:underline">Cotizar Bus <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </article>
+
+        <article class="card overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1541931784-6c2b7637993e?q=80&w=1200&auto=format&fit=crop" alt="Van premium" class="h-40 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-brand-dark flex items-center gap-2"><i data-lucide="bus-front" class="w-5 h-5"></i> Van Premium</h3>
+            <p class="mt-2 text-slate-600"><strong>Asientos:</strong> 10–15. A/C, cinturones 3 pts y maletero.</p>
+            <a href="#contacto" class="mt-4 inline-flex items-center gap-2 text-brand-blue hover:underline">Cotizar Van <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINOS -->
+  <section id="destinos" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-title">Destinos populares</h2>
+      <p class="mt-3 lead">Desde escapadas de fin de semana hasta tours completos.</p>
+
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="card overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1501959915551-4e8d30928317?q=80&w=1200&auto=format&fit=crop" alt="Playas" class="h-32 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-brand-dark">Playas</h3>
+            <p class="mt-2 text-slate-600">Costa y relax con paradas panorámicas y tiempo libre.</p>
+          </div>
+        </article>
+
+        <article class="card overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1508261303786-0e3b02e5ddf0?q=80&w=1200&auto=format&fit=crop" alt="Montaña" class="h-32 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-brand-dark">Montaña</h3>
+            <p class="mt-2 text-slate-600">Aventura y nieve, equipos y asistencia para tu grupo.</p>
+          </div>
+        </article>
+
+        <article class="card overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1509205477838-a534e43a849f?q=80&w=1200&auto=format&fit=crop" alt="Viñedos" class="h-32 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-brand-dark">Viñedos</h3>
+            <p class="mt-2 text-slate-600">Enoturismo: bodegas, catas y gastronomía regional.</p>
+          </div>
+        </article>
+
+        <article class="card overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1526779259212-939e64788e3c?q=80&w=1200&auto=format&fit=crop" alt="Patrimonios" class="h-32 w-full object-cover">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-brand-dark">Patrimonios</h3>
+            <p class="mt-2 text-slate-600">Historia y cultura con guías certificados.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative overflow-hidden rounded-3xl p-8 md:p-12 shadow-xl border border-blue-100" style="background:linear-gradient(135deg,#bfdbfe,#3b82f6)">
+        <div class="absolute -top-20 -left-10 w-56 h-56 rounded-full blur-3xl opacity-30" style="background:#8ad0ff"></div>
+        <div class="relative grid md:grid-cols-2 gap-6 items-center">
+          <div>
+            <h3 class="text-2xl md:text-3xl font-bold text-white">¿Listos para su próximo viaje?</h3>
+            <p class="mt-2 text-blue-50">Solicitá una cotización en minutos. Respondemos rápido.</p>
+          </div>
+          <div class="flex md:justify-end gap-3">
+            <a href="#contacto" class="btn bg-white text-blue-700 hover:bg-blue-50">Pedir cotización <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            <a href="https://wa.me/56900000000?text=Hola%20Transportes%20Bieler%2C%20quiero%20cotizar%20un%20viaje" target="_blank" rel="noopener" class="btn bg-white text-green-700 border border-green-200 hover:bg-green-50">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="section-title">Contacto y cotizaciones</h2>
+      <p class="mt-3 lead">Contanos tu destino, fechas y cantidad de pasajeros.</p>
+
+      <div class="mt-10 grid md:grid-cols-5 gap-8">
+        <div class="md:col-span-3">
+          <form onsubmit="event.preventDefault();window.open('https://wa.me/56900000000?text=Hola%20Transportes%20Bieler%2C%20quiero%20cotizar%20un%20viaje','_blank');" class="card p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm text-slate-700">Nombre</label>
+              <input required placeholder="Tu nombre" class="mt-1 w-full rounded-xl border border-blue-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300" />
+            </div>
+            <div>
+              <label class="text-sm text-slate-700">Email</label>
+              <input required type="email" placeholder="tu@email.com" class="mt-1 w-full rounded-xl border border-blue-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300" />
+            </div>
+            <div>
+              <label class="text-sm text-slate-700">Teléfono</label>
+              <input placeholder="+56 9 ..." class="mt-1 w-full rounded-xl border border-blue-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300" />
+            </div>
+            <div>
+              <label class="text-sm text-slate-700">Pasajeros</label>
+              <input type="number" min="1" placeholder="Ej. 25" class="mt-1 w-full rounded-xl border border-blue-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300" />
+            </div>
+            <div class="md:col-span-2">
+              <label class="text-sm text-slate-700">Detalles del viaje</label>
+              <textarea rows="5" placeholder="Origen, destino, fechas, horarios…" class="mt-1 w-full rounded-xl border border-blue-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"></textarea>
+            </div>
+            <div class="md:col-span-2 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3 text-sm text-slate-600">
+                <i data-lucide="phone-call" class="w-4 h-4 text-blue-600"></i> +56 9 0000 0000
+                <i data-lucide="mail" class="w-4 h-4 text-blue-600"></i> contacto@transportesbieler.cl
+              </div>
+              <button type="submit" class="btn bg-brand-blue text-white hover:bg-blue-700">Enviar</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="md:col-span-2 space-y-4">
+          <div class="card p-5">
+            <h4 class="font-semibold text-brand-dark">¿Por qué elegirnos?</h4>
+            <ul class="mt-3 space-y-2 text-slate-700">
+              <li class="flex gap-3"><i data-lucide="shield-check" class="w-5 h-5 text-blue-600 mt-0.5"></i> Seguros al día y protocolos de seguridad.</li>
+              <li class="flex gap-3"><i data-lucide="clock" class="w-5 h-5 text-blue-600 mt-0.5"></i> Puntualidad y monitoreo de rutas.</li>
+              <li class="flex gap-3"><i data-lucide="badge-check" class="w-5 h-5 text-blue-600 mt-0.5"></i> Atención personalizada y rápida respuesta.</li>
+            </ul>
+          </div>
+          <div class="card overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps?q=Santiago%2C%20Chile&output=embed"
+              width="100%"
+              height="280"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa - Santiago, Chile"></iframe>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-blue-100 bg-white/80 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center">
+            <i data-lucide="bus-front" class="text-white w-4 h-4"></i>
+          </div>
+          <span class="font-semibold text-brand-dark">Transportes Bieler</span>
+        </div>
+        <p class="mt-3 text-sm text-slate-600 max-w-sm">Turismo y transporte de pasajeros con enfoque en seguridad, comodidad y servicio.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-brand-dark">Enlaces</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="#servicios" class="hover:text-blue-700">Servicios</a></li>
+          <li><a href="#flota" class="hover:text-blue-700">Flota</a></li>
+          <li><a href="#destinos" class="hover:text-blue-700">Destinos</a></li>
+          <li><a href="#contacto" class="hover:text-blue-700">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-brand-dark">Contacto</h4>
+        <ul class="mt-3 space-y-2 text-sm text-slate-600">
+          <li>+56 9 0000 0000</li>
+          <li>contacto@transportesbieler.cl</li>
+          <li>Santiago, Chile</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-blue-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-xs text-slate-500 flex flex-wrap items-center justify-between gap-3">
+        <span>© <span id="year"></span> Transportes Bieler. Todos los derechos reservados.</span>
+        <span>Hecho con ❤️ en celestes y azules</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/56900000000?text=Hola%20Transportes%20Bieler%2C%20quiero%20cotizar%20un%20viaje"
+     target="_blank" rel="noopener"
+     class="fixed bottom-6 right-6 rounded-full bg-brand-ws text-white px-5 py-4 shadow-lg flex items-center gap-2 hover:brightness-110">
+     <i data-lucide="message-circle" class="w-5 h-5"></i>
+     WhatsApp
+  </a>
+
+  <script>
+    // Render icons
+    lucide.createIcons();
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
